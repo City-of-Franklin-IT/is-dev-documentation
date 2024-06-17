@@ -1,5 +1,5 @@
 <h1>Nginx Configuration</h1>
-<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server. <em>Note - logged in user must have root privileges in order to install Nginx.</em></p>
+<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server. <b>Note - logged in user must have root privileges in order to install Nginx.</b></p>
 
 <h2>SSL Certificate</h2>
 <p>Prior to Nginx installation it is required that an SSL certificate be applied to the host to ensure proper encryption and https traffic.  What type of certificate will depend on whether the host is behind the firewall or reachable by public internet in the DMZ.  If behind the firewall, a SSL certificate from our internal certificate authority will be sufficient.  Otherwise, a SSL certificate from an external CA such as GoDaddy will be required.  In either case the Datacenter team will help with the aquisition of such certificate and Network will also need to update the internal DNS.</p>
