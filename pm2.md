@@ -30,4 +30,4 @@ pm2 save
 pm2 status
 ```
 
-<p>You should now have PM2 installed on server and managing a single application.</p>
+<p>You should now have PM2 installed on server and managing a single application.  For further help with PM2 please visit the official documentation found <a href="https://pm2.keymetrics.io/docs/usage/quick-start/" target="_blank">here</a></p>
