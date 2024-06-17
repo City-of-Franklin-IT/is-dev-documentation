@@ -1,5 +1,5 @@
 <h1>Nginx Configuration</h1>
-<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server.  <b>Note - logged in user must have root privileges in order to install Nginx.</b></p>
+<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server.  <br><br><b><em>Note - logged in user must have root privileges in order to install Nginx.</em></b></p>
 
 <h2>SSL Certificate</h2>
 <p>Prior to Nginx installation it is required that an SSL certificate be applied to the host to ensure proper encryption and enable https traffic.  What type of certificate will depend on whether the host is behind the firewall or reachable by public internet in the DMZ.  If behind the firewall, a SSL certificate from the City's internal certificate authority will be sufficient.  Otherwise, an SSL certificate from an external CA such as GoDaddy will be required.  In either case the Datacenter team will help with the aquisition of such certificate and Network will also need to update the internal DNS when applicable.</p>
@@ -9,7 +9,7 @@
 
 ```bash
 # Split the .pem file into separate private key and certificate block files.  
-# From the directory containing the .pem file run the following command to create a new private key file from the combined .pem file:
+# From the directory containing the original .pem file - run the following command to create a new private key file from the combined .pem file:
 openssl pkey -in originalpemfile.pem -out yournewkey.pem
 ```
 
@@ -31,7 +31,7 @@ sudo mv yournewkey.pem /etc/ssl/keys
 
 
 ```bash
-# Copy certificate file to appropriate location.  The certs directory will not need to be created:
+# Copy certificate file to appropriate location.  The certs directory will exist already and will not need to be created:
 sudo mv yournewcert.pem /etc/ssl/certs
 ```
 
@@ -59,7 +59,8 @@ sudo nano cofasv38
 
 
 ```bash
-# Use the following server block configuration - updating the hostname to the appropriate name.  When finished, save the file and close the text editor:
+# Use the following server block configuration - updating the hostname to the appropriate name.  
+# When finished, save the file and close the text editor:
 server {
   server_name hostname.franklintn.gov;
   access_log /var/log/nginx/access.log;
@@ -69,7 +70,7 @@ server {
   ssl_certificate /etc/ssl/certs/yournewcert.pem; # Path to newly added certificate file
   ssl_certificate_key /etc/ssl/keys/yournewkey.pem; # Path to newly added key file
 
-  client_max_body_size 10M; # Increases the permitted body size of an http request - mostly necessary for handling attachments
+  client_max_body_size 10M; # Optional. Increases the permitted body size of an http request - mostly necessary for handling attachments
 
   root /var/www/html; # Default path to the root directory of the website
   index index.html index.htm index.nginx-debian.html; # Types of files Nginx will attempt to serve at the root
@@ -83,7 +84,7 @@ server {
 ```bash
 # Remove the existing default symlink.
 # Replace with symlink to newly created config file:
-cd /etc/nginx/sites-available
+cd /etc/nginx/sites-enabled
 sudo rm default
 sudo ln -s /etc/nginx/sites-available/cofasv38 # Replace cofasv38 with the appropriate config file name
 
