@@ -3,6 +3,7 @@
 
 <h2>Installation</h2>
 <p>It is typically a good idea to NOT use sudo when installing and working with pm2.</p>
+
 ```bash
 # Install pm2 using npm.
 npm install pm2@latest -g 
