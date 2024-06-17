@@ -1,5 +1,5 @@
 <h1>PM2 Process Manager</h1>
-<p>Node applications served on a Linux server utilize PM2 process manager in order to automatically run applications on system boot as well as restart applications in the event of an exception that causes the application to stop unexpectedly.  The following guide outlines the installation of PM2 on a Linux server and explains its basic use.  <br><br>Note - npm (node package manager) installation is assumed for the use of this guide.  Ensure npm is installed on server prior to utilizing this guide.</p>
+<p>Node applications served on a Linux server utilize PM2 process manager in order to automatically run applications on system boot as well as restart applications in the event of an exception that causes the application to stop unexpectedly.  The following guide outlines the installation of PM2 on a Linux server and explains its basic use.  <br><br><b><em>Note - npm (node package manager) installation is assumed for the use of this guide.  Ensure npm is installed on server prior to utilizing this guide.</b></em></p>
 
 <h2>Installation</h2>
 <p>It is typically a good idea to NOT use sudo when installing and working with pm2.</p>
