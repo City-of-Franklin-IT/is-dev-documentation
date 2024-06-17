@@ -36,6 +36,7 @@ sudo mv yournewcert.pem /etc/ssl/certs
 ```
 
 <h2>Nginx Installation and Configuration</h2>  
+<p>Nginx will be installed using apt package manager.  Once installed, a configuration file will need to be created as well as enabled.</p>
 
 
 ```bash
@@ -58,7 +59,7 @@ sudo nano cofasv38
 
 
 ```bash
-# Use the following server block configuration - updating the hostname to the appropriate name
+# Use the following server block configuration - updating the hostname to the appropriate name.  When finished, save the file and close the text editor:
 server {
   server_name hostname.franklintn.gov;
   access_log /var/log/nginx/access.log;
@@ -73,6 +74,21 @@ server {
   root /var/www/html; # Default path to the root directory of the website
   index index.html index.htm index.nginx-debian.html; # Types of files Nginx will attempt to serve at the root
 }
+```
+
+
+<p>When the new config file is created - it is necessary to create a symbolic link (symlink) between the new file in /etc/nginx/sites-available and /etc/nginx/sites-enabled in order to utilize the config file.  It will also be necessary to remove the existing symlink created for the default config file that is created during the Nginx installation process.</p>
+
+
+```bash
+# Remove the existing default symlink.
+# Replace with symlink to newly created config file:
+cd /etc/nginx/sites-available
+sudo rm default
+sudo ln -s /etc/nginx/sites-available/cofasv38 # Replace cofasv38 with the appropriate config file name
+
+# Test the config file
+sudo nginx -t
 ```
 
 
@@ -113,3 +129,13 @@ To                         Action      From
 443/tcp (v6)               ALLOW       Anywhere (v6) 
 ```
 
+
+<h2>Final Steps and Testing</h2>
+<p>You should now have SSL certificate and private key in place, Nginx installed with config file created and symlink enabled, and generated UFW rules with firewall enabled.  We are now ready to test the configuration.</p>
+
+```bash
+# Restart the Nginx service to allow for the new config file to be applied
+sudo systemctl restart nginx
+```
+
+<p>You should now be able to test the Nginx configuration by visiting https://hostname.franklintn.gov/ in browser to see if the default Nginx landing page located at /var/www/html/index.nginx-debian.html is available.</p>
