@@ -1,33 +1,42 @@
 <h1>Nginx Configuration</h1>
-<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server. <b style="color:yellow">Note - logged in user must have root privileges in order to install Nginx.</b></p>
+<p>Nginx is a reverse proxy and load balancing web server that is used to handle incoming http requests.  The following procedures are to be followed when installing Nginx from command line on a Linux web server.  <b>Note - logged in user must have root privileges in order to install Nginx.</b></p>
 
 <h2>SSL Certificate</h2>
-<p>Prior to Nginx installation it is required that an SSL certificate be applied to the host to ensure proper encryption and https traffic.  What type of certificate will depend on whether the host is behind the firewall or reachable by public internet in the DMZ.  If behind the firewall, a SSL certificate from our internal certificate authority will be sufficient.  Otherwise, a SSL certificate from an external CA such as GoDaddy will be required.  In either case the Datacenter team will help with the aquisition of such certificate and Network will also need to update the internal DNS.</p>
+<p>Prior to Nginx installation it is required that an SSL certificate be applied to the host to ensure proper encryption and enable https traffic.  What type of certificate will depend on whether the host is behind the firewall or reachable by public internet in the DMZ.  If behind the firewall, a SSL certificate from the City's internal certificate authority will be sufficient.  Otherwise, an SSL certificate from an external CA such as GoDaddy will be required.  In either case the Datacenter team will help with the aquisition of such certificate and Network will also need to update the internal DNS when applicable.</p>
 
-<p>The following assumes the certificate file is in .pem format with private key and certificate block contained within the same file.  Exact steps may vary depending on the format of the certifcate file provided by Datacenter.</p>
+<p>The following assumes the certificate file provided by Datacenter is in .pem format with private key and certificate block contained within the same file.  Exact steps may vary depending on the format of the certifcate file.</p>
+
 
 ```bash
-# Split the .pem file into separate private key and certificate block files.  From the directory containing the .pem file run the following command to create a new private key file from the combined .pem file:
+# Split the .pem file into separate private key and certificate block files.  
+# From the directory containing the .pem file run the following command to create a new private key file from the combined .pem file:
 openssl pkey -in originalpemfile.pem -out yournewkey.pem
 ```
+
 
 ```bash
 # Use the following command to create a new certificate block file using openssl:
 openssl x509 -in originalpemfile.epm -out yournewcert.pem
 ```
 
-<p>Copy the newly created private key and certificate files to the appropiate locations.</p>
+
+<p>Move the newly created private key and certificate files to the appropiate locations.</p>
+
 
 ```bash
-# Create directory for private key then copy file to newly created directory
+# Create directory for private key then copy key file to newly created directory
 sudo mkdir /etc/ssl/keys
 sudo mv yournewkey.pem /etc/ssl/keys
 ```
+
 
 ```bash
 # Copy certificate file to appropriate location.  The certs directory will not need to be created:
 sudo mv yournewcert.pem /etc/ssl/certs
 ```
+
+<h2>Nginx Installation and Configuration</h2>  
+
 
 ```bash
 # Update the package lists for upgrades and new packages
@@ -35,10 +44,72 @@ sudo apt update
 sudo apt install nginx
 ```
 
+
 ```bash
-# Navigate to the /etc/nginx/sites-available directory to create a new Nginx config file using the naming convention of the host.  For example: if the host name is COFASV38 the config file will also be named COFASV38
+# Navigate to the /etc/nginx/sites-available directory. 
+# Create a new Nginx config file using the same naming convention of the host.  
+# For example: if the host name is COFASV38 the config file will also be named COFASV38:
 cd /etc/nginx/sites-available
 sudo nano cofasv38
 ```
 
+
 <p>An empty file will be opened in the text editor.</p>
+
+
+```bash
+# Use the following server block configuration - updating the hostname to the appropriate name
+server {
+  server_name hostname.franklintn.gov;
+  access_log /var/log/nginx/access.log;
+  error_log /var/log/nginx/error.log;
+
+  listen 443 ssl; # Listen on port 443 SSL
+  ssl_certificate /etc/ssl/certs/yournewcert.pem; # Path to newly added certificate file
+  ssl_certificate_key /etc/ssl/keys/yournewkey.pem; # Path to newly added key file
+
+  client_max_body_size 10M; # Increases the permitted body size of an http request - mostly necessary for handling attachments
+
+  root /var/www/html; # Default path to the root directory of the website
+  index index.html index.htm index.nginx-debian.html; # Types of files Nginx will attempt to serve at the root
+}
+```
+
+
+<h2>UFW</h2>
+<p>UFW - Uncomplicated Firewall - is utilized by Nginx to permit or deny network traffic to specific ports.  By default, UFW is not enabled when Nginx is installed.  It is necessary to enable UFW and create new rules to allow network traffic only from specific ports to better prevent against malicious actors.</p>
+
+
+```bash
+# Create UFW rule to allow port 22.  
+# Port 22 is used for SSH connection and is important to allow traffic to when first enabling UFW:
+sudo ufw allow 22/tcp
+```
+
+
+```bash
+# Create UFW rule allowing https traffic via port 443.
+# Enable firewall:
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+
+
+<p>You should now have an enabled firewall allowing traffic only to ports 22 (for SSH) and 443 (for SSL)</p>
+
+
+```bash
+# Enter the following command to confirm UFW is properly applied:
+sudo ufw status
+
+# The terminal should look something like this:
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22/tcp                     ALLOW       Anywhere                  
+443/tcp                    ALLOW       Anywhere                  
+22/tcp (v6)                ALLOW       Anywhere (v6)             
+443/tcp (v6)               ALLOW       Anywhere (v6) 
+```
+
