@@ -94,17 +94,17 @@
   <tr>
     <td>PD API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v1/pd" target="_blank">https://dev.franklintn.gov/api/v1/pd</a></td>
-    <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/pd" target="_blank">https://api.franklintn-gov.com/api/v1/pd</a></td>
+    <td>Proxy for <a href="https://api.franklin-gov.com/api/v1/pd" target="_blank">https://api.franklintn-gov.com/api/v1/pd</a></td>
   </tr>
   <tr>
     <td>Department Purchasing API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v2/dept-purchasing" target="_blank">https://dev.franklintn.gov/api/v2/dept-purchasing</a></td>
-    <td>Proxy for <a href="https://api.franklintn-gov.com/api/v2/dept-purchasing" target="_blank">https://api.franklintn-gov.com/api/v2/dept-purchasing</a></td>
+    <td>Proxy for <a href="https://api.franklin-gov.com/api/v2/dept-purchasing" target="_blank">https://api.franklintn-gov.com/api/v2/dept-purchasing</a></td>
   </tr>
   <tr>
     <td>Engineering API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v1/eng" target="_blank">https://dev.franklintn.gov/api/v1/eng</a></td>
-    <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
+    <td>Proxy for <a href="https://api.franklin-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
   </tr>
 </table>
 
@@ -136,11 +136,11 @@
   <tr>
     <td>Indect Parking API <em>Proxy</em></td>
     <td><a href="https://apps.franklintn.gov/indect/structure" target="_blank">https://apps.franklintn.gov/indect/structure</a></td>
-    <td>Proxy for <a href="https://api.franklintn-gov.com/indect/structure" target="_blank">https://api.franklintn-gov.com/indect/structure</a>.</td>
+    <td>Proxy for <a href="https://api.franklin-gov.com/indect/structure" target="_blank">https://api.franklintn-gov.com/indect/structure</a>.</td>
   </tr>
   <tr>
     <td>Engineering API <em>Proxy</em></td>
     <td><a href="https://apps.franklintn.gov/api/v1/eng" target="_blank">https://apps.franklintn.gov/api/v1/eng</a></td>
-    <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
+    <td>Proxy for <a href="https://api.franklin-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
   </tr>  
 </table>
