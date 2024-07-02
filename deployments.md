@@ -13,37 +13,37 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td>Department Purchasing API /api/v2/dept-purchasing</td>
+    <td>Department Purchasing API</td>
     <td><a href="https://api.franklin-gov.com/api/v2/dept-purchasing" target="_blank">https://api.franklin-gov.com/api/v2/dept-purchasing</a></td>
     <td>5000</td>
     <td>Handles database functionality for department purchasing application.</td>
   </tr>
   <tr>
-    <td>Revenue Management Tools API /api/v1/rev-mgmt-tools</td>
+    <td>Revenue Management Tools API</td>
     <td><a href="https://api.franklin-gov.com/rev-mgmt-tools" target="_blank">https://api.franklin-gov.com/rev-mgmt-tools</a></td>
     <td>5001</td>
     <td>Revenue Management Tools backend.</td>
   </tr>
   <tr>
-    <td>Indect Parking API /indect/structure</td>
+    <td>Indect Parking API</td>
     <td><a href="https://api.franklin-gov.com/indect/structure" target="_blank">https://api.franklin-gov.com/indect/structure</a></td>
     <td>5002</td>
     <td>Proxies requests to the Indect API for the parking garage availability application.</td>
   </tr>
   <tr>
-    <td>FFD API /api/v1/ffd-api</td>
+    <td>FFD API</td>
     <td><a href="https://api.franklin-gov.com/api/v1/ffd" target="_blank">https://api.franklin-gov.com/api/v1/ffd</a></td>
     <td>5003</td>
     <td>Backend for multiple FFD related applications.</td>
   </tr>
   <tr>
-    <td>Engineering API /api/v1/eng-api</td>
+    <td>Engineering API</td>
     <td><a href="https://api.franklin-gov.com/api/v1/eng" target="_blank">https://api.franklin-gov.com/api/v1/eng</a></td>
     <td>5004</td>
     <td>Backend for multiple Engineering and Planning related applications.</td>
   </tr>
   <tr>
-    <td>PD API /api/v1pd-api</td>
+    <td>PD API</td>
     <td><a href="https://api.franklin-gov.com/api/v1/pd" target="_blank">https://api.franklin-gov.com/api/v1/pd</a></td>
     <td>5005</td>
     <td>Backend for multiple PD related applications.</td>
@@ -67,42 +67,42 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td>Stormwater Site Innspections /stormwater</td>
+    <td>Stormwater Site Innspections</td>
     <td><a href="https://dev.franklintn.gov/stormwater" target="_blank">https://dev.franklintn.gov/stormwater</a></td>
     <td>Utilized by the Engineering Department to track site inspections and violations.</td>
   </tr>
   <tr>
-    <td>Department Purchasing /dept-purchasing</td>
+    <td>Department Purchasing</td>
     <td><a href="https://dev.franklintn.gov/dept-purchasing" target="_blank">https://dev.franklintn.gov/dept-purchasing</a></td>
     <td>Currently in use by Fire and Parks departments - allows for submission and tracking of purchases and purchase requests.</td>
   </tr>
   <tr>
-    <td>CIP Tracker /cip</td>
+    <td>CIP Tracker</td>
     <td><a href="https://dev.franklintn.gov/cip" target="_blank">https://dev.franklintn.gov/cip</a></td>
     <td>Application used to track the lifecycle of capital investment projects.  Has a public facing element hosted on COFASV03.</td>
   </tr>
   <tr>
-    <td>Crime Scene Stats /crime-scene</td>
+    <td>Crime Scene Stats</td>
     <td><a href="https://dev.franklintn.gov/crime-scene" target="_blank">https://dev.franklintn.gov/crime-scene</a></td>
     <td>PD application used by crime scene technicians to track processes and materials used for case work.</td>
   </tr>
   <tr>
-    <td>Project Vesting /vesting</td>
+    <td>Project Vesting</td>
     <td><a href="https://dev.franklintn.gov/vesting" target="_blank">https://dev.franklintn.gov/vesting</a></td>
     <td>Planning Department application tracks project vesting lifecycles.</td>
   </tr>
   <tr>
-    <td>PD API <em>Proxy</em> /api/v1/pd</td>
+    <td>PD API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v1/pd" target="_blank">https://dev.franklintn.gov/api/v1/pd</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/pd" target="_blank">https://api.franklintn-gov.com/api/v1/pd</a></td>
   </tr>
   <tr>
-    <td>Department Purchasing API <em>Proxy</em> /api/v2/dept-purchasing</td>
+    <td>Department Purchasing API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v2/dept-purchasing" target="_blank">https://dev.franklintn.gov/api/v2/dept-purchasing</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v2/dept-purchasing" target="_blank">https://api.franklintn-gov.com/api/v2/dept-purchasing</a></td>
   </tr>
   <tr>
-    <td>Engineering API <em>Proxy</em> /api/v1/eng</td>
+    <td>Engineering API <em>Proxy</em></td>
     <td><a href="https://dev.franklintn.gov/api/v1/eng" target="_blank">https://dev.franklintn.gov/api/v1/eng</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
   </tr>
@@ -119,27 +119,27 @@
     <th>Description</th>
   </tr>
   <tr>
-    <td>Parking Availability /parking-counter</td>
+    <td>Parking Availability</td>
     <td><a href="https://apps.franklintn.gov/parking-counter" target="_blank">https://apps.franklintn.gov/parking-counter</a></td>
     <td>Displays parking availability for 2nd Ave and 4th Ave parking garages.</td>
   </tr>
   <tr>
-    <td>Active Construction Sites /active-sites</td>
+    <td>Active Construction Sites</td>
     <td><a href="https://apps.franklintn.gov/active-sites" target="_blank">https://apps.franklintn.gov/active-sites</a></td>
     <td>Mapping application displays active construction sites throughout the city.  Active sites are determined by Engineering and are maintained via the Stormwater site inspection application.</td>
   </tr>
   <tr>
-    <td>Active CIP Projects /active-projects</td>
+    <td>Active CIP Projects</td>
     <td><a href="https://apps.franklintn.gov/active-projects" target="_blank">https://apps.franklintn.gov/active-projects</a></td>
     <td>Mapping application displays capital investment projects.  Active projects are determined by Engineering and are maintained via the internal CIP Tracker application.</td>
   </tr>
   <tr>
-    <td>Indect Parking API <em>Proxy</em> /indect/structure</td>
+    <td>Indect Parking API <em>Proxy</em></td>
     <td><a href="https://apps.franklintn.gov/indect/structure" target="_blank">https://apps.franklintn.gov/indect/structure</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/indect/structure" target="_blank">https://api.franklintn-gov.com/indect/structure</a>.</td>
   </tr>
   <tr>
-    <td>Engineering API <em>Proxy</em> /api/v1/eng</td>
+    <td>Engineering API <em>Proxy</em></td>
     <td><a href="https://apps.franklintn.gov/api/v1/eng" target="_blank">https://apps.franklintn.gov/api/v1/eng</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
   </tr>  
