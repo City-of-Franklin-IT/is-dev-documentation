@@ -7,7 +7,7 @@
 <h3>Apps</h3>
   <table>
     <tr>
-      <th>Application Name</th>
+      <th>Name</th>
       <th>URL</th>
       <th>PORT</th>
       <th>Description</th>
@@ -31,9 +31,27 @@
       <td>Proxies requests to the Indect API for the parking garage availability application.</td>
     </tr>
     <tr>
+      <td>ffd-api</td>
+      <td><a href="https://api.franklin-gov.com/api/v1/ffd" target="_blank">https://api.franklin-gov.com/api/v1/ffd</a></td>
+      <td>5003</td>
+      <td>Backend for multiple FFD related applications.</td>
+    </tr>
+    <tr>
       <td>eng-api</td>
       <td><a href="https://api.franklin-gov.com/api/v1/eng" target="_blank">https://api.franklin-gov.com/api/v1/eng</a></td>
       <td>5004</td>
       <td>Backend for multiple Engineering and Planning related applications.</td>
+    </tr>
+    <tr>
+      <td>pd-api</td>
+      <td><a href="https://api.franklin-gov.com/api/v1/pd" target="_blank">https://api.franklin-gov.com/api/v1/pd</a></td>
+      <td>5005</td>
+      <td>Backend for multiple PD related applications.</td>
+    </tr>
+    <tr>
+      <td>Cockpit</td>
+      <td><a href="http://cofasv30:9090/system" target="_blank">http://cofasv30:9090/system</a></td>
+      <td>9090</td>
+      <td>Ubuntu Cockpit utilty for managing Linux servers via browser.</td>
     </tr>
   </table>
