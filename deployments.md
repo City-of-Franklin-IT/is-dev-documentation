@@ -78,7 +78,7 @@
   </tr>
   <tr>
     <td>/cip</td>
-    <td><a href="https://dev.franklintn.gov/cip" target="_blank">https://dev.franklintn.gov/cip</a><td>
+    <td><a href="https://dev.franklintn.gov/cip" target="_blank">https://dev.franklintn.gov/cip</a></td>
     <td>Application used to track the lifecycle of capital investment projects.  Has a public facing element hosted on COFASV03.</td>
   </tr>
   <tr>
