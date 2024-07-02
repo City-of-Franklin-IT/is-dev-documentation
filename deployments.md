@@ -92,18 +92,55 @@
     <td>Planning Department application tracks project vesting lifecycles.</td>
   </tr>
   <tr>
-    <td>/api/v1/pd | <em>Proxy</em></td>
+    <td>/api/v1/pd</td>
     <td><a href="https://dev.franklintn.gov/api/v1/pd" target="_blank">https://dev.franklintn.gov/api/v1/pd</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/pd" target="_blank">https://api.franklintn-gov.com/api/v1/pd</a></td>
   </tr>
   <tr>
-    <td>/api/v2/dept-purchasing | <em>Proxy</em></td>
+    <td>/api/v2/dept-purchasing</td>
     <td><a href="https://dev.franklintn.gov/api/v2/dept-purchasing" target="_blank">https://dev.franklintn.gov/api/v2/dept-purchasing</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v2/dept-purchasing" target="_blank">https://api.franklintn-gov.com/api/v2/dept-purchasing</a></td>
   </tr>
   <tr>
-    <td>/api/v1/eng | <em>Proxy</em></td>
+    <td>/api/v1/eng</td>
     <td><a href="https://dev.franklintn.gov/api/v1/eng" target="_blank">https://dev.franklintn.gov/api/v1/eng</a></td>
     <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
   </tr>
+</table>
+
+<h2 id="COFASV03">COFASV03</h2>
+<p>DMZ Linux web server hosts publicly available frontend applications.</p>
+
+<h3>Apps</h3>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>/parking-counter</td>
+    <td><a href="https://apps.franklintn.gov/parking-counter" target="_blank">https://apps.franklintn.gov/parking-counter</a></td>
+    <td>Displays parking availability for 2nd Ave and 4th Ave parking garages.</td>
+  </tr>
+  <tr>
+    <td>/active-sites</td>
+    <td><a href="https://apps.franklintn.gov/active-sites" target="_blank">https://apps.franklintn.gov/active-sites</a></td>
+    <td>Mapping application displays active construction sites throughout the city.  Active sites are determined by Engineering and are maintained via the Stormwater site inspection application.</td>
+  </tr>
+  <tr>
+    <td>/active-projects</td>
+    <td><a href="https://apps.franklintn.gov/active-projects" target="_blank">https://apps.franklintn.gov/active-projects</a></td>
+    <td>Mapping application displays capital investment projects.  Active projects are determined by Engineering and are maintained via the internal CIP Tracker application.</td>
+  </tr>
+  <tr>
+    <td>/indect/structure</td>
+    <td><a href="https://apps.franklintn.gov/indect/structure" target="_blank">https://apps.franklintn.gov/indect/structure</a></td>
+    <td>Proxy for <a href="https://api.franklintn-gov.com/indect/structure" target="_blank">https://api.franklintn-gov.com/indect/structure</a>.</td>
+  </tr>
+  <tr>
+    <td>/api/v1/eng</td>
+    <td><a href="https://apps.franklintn.gov/api/v1/eng" target="_blank">https://apps.franklintn.gov/api/v1/eng</a></td>
+    <td>Proxy for <a href="https://api.franklintn-gov.com/api/v1/eng" target="_blank">https://api.franklintn-gov.com/api/v1/eng</a></td>
+  </tr>  
 </table>
